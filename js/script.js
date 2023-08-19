@@ -49,5 +49,7 @@ const couponBtn = document.getElementById('coupon-btn').addEventListener('click'
         document.getElementById('grand-total').innerText = total;
         document.getElementById('discount').innerText = totalDiscount;
 })
-
+document.getElementById('home-btn').addEventListener('click', function(){
+    window.location.href = 'index.html'
+})
 

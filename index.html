@@ -221,7 +221,17 @@
                             <p class="mb-2"><strong>Total:</strong> <span id="grand-total" class="text-gray-400">00 </span><span class="text-gray-400">TK</span></p>
                         </div>
                         <div class="text-center">
-                            <button id="purchase-btn" class="btn btn-wide mt-6 bg-[#E527B2] text-white hover:text-black" disabled>Make Purchase</button>
+                            <button id="purchase-btn" class="btn btn-wide mt-6 bg-[#E527B2] text-white hover:text-black" onclick="my_modal_5.showModal()" disabled>Make Purchase</button>
+                            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                            <form method="dialog" class="modal-box flex flex-col justify-center">
+                                <img src="images/congo.png" alt="" class="w-1/2 self-center">
+                                <h3 class="font-bold text-4xl">Congratulations!</h3>
+                                <p class="py-4">Your Purchase the product</p>
+                                <div class="modal-action justify-center">
+                                    <button id="home-btn" class="btn btn-wide bg-[#E527B2] text-white hover:text-black">Go Home</button>
+                                </div>
+                            </form>
+                            </dialog>
                         </div>
                     </div>
                 </div>
