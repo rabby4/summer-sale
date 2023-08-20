@@ -8,24 +8,21 @@ function cardBtn(target){
     li.style.listStyle = "decimal inside";
     li.style.fontWeight = '600';
     li.innerText = productTitle;
-    productListDiv.appendChild(li)
+    productListDiv.appendChild(li);
 
     const productPrice = target.childNodes[3].childNodes[5].innerText.split(" ")[0];
-
     total = (parseFloat(total) + parseFloat(productPrice)).toFixed(2);
 
     // get total price element and set total price
     const totalPrice = document.getElementById("total-price");
     totalPrice.innerText = total;
-    const couponBtn = document.getElementById('coupon-btn');
-    
+    const couponBtn = document.getElementById('coupon-btn'); 
     // Condition for Coupon button 
         if(total > 200){
             couponBtn.removeAttribute('disabled');
         }else{
             couponBtn.setAttribute('disabled', true);
         }
-
     // condition for Purchase button
     const purchaseBtn = document.getElementById('purchase-btn');
         if(total > 0){
@@ -33,17 +30,18 @@ function cardBtn(target){
         }else{
             purchaseBtn.setAttribute('disabled', true)
         }
-    
 }
-
-const couponBtn = document.getElementById('coupon-btn').addEventListener('click', function(){
+document.getElementById('coupon-btn').addEventListener('click', function(){
     const couponField = document.getElementById('coupon-field').value;
         if(couponField === 'SELL200'){
             const discount = total * 0.2;
             total = (total - discount).toFixed(2);
             const discountPrice = total / 0.8;
-            totalDiscount = Math.abs(total - discountPrice).toFixed(2);
-            
+            totalDiscount = Math.abs(total - discountPrice).toFixed(2);  
+        }else if(couponField === ''){
+            alert("You didn't insert any coupon.")
+        }else{
+            alert("You insert wrong coupon.")
         }
         document.getElementById('grand-total').innerText = total;
         document.getElementById('discount').innerText = totalDiscount;
