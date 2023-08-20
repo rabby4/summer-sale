@@ -37,7 +37,7 @@ function cardBtn(target){
 }
 
 const couponBtn = document.getElementById('coupon-btn').addEventListener('click', function(){
-    const couponField = document.getElementById('coupon-field').value; 
+    const couponField = document.getElementById('coupon-field').value;
         if(couponField === 'SELL200'){
             const discount = total * 0.2;
             total = (total - discount).toFixed(2);
