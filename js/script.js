@@ -13,8 +13,10 @@ function cardBtn(target){
     const productPrice = target.childNodes[3].childNodes[5].innerText.split(" ")[0];
 
     total = (parseFloat(total) + parseFloat(productPrice)).toFixed(2);
+    
     // get total price element and set total price
-    const totalPrice = target.parentNode.parentNode.parentNode.nextSibling.nextSibling.childNodes[3].childNodes[3].childNodes[1].childNodes[2];
+    const totalPrice = document.getElementById("total-price");
+    console.log(totalPrice);
     totalPrice.innerText = total;
     const couponBtn = document.getElementById('coupon-btn');
     
@@ -32,8 +34,6 @@ function cardBtn(target){
         }else{
             purchaseBtn.setAttribute('disabled', true)
         }
-
-    // coupon apply condition
     
 }
 
